@@ -2,7 +2,10 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#f3f5fa">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#14161b">
 <title>입시요강 허브 — 대학 모집요강 한눈에</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@600;900&family=IBM+Plex+Mono:wght@500&display=swap">
@@ -22,7 +25,13 @@
     --jeongsi-soft: #fdf3e3;
     --plan: #4f46e5;
     --plan-soft: #eceafd;
+    --ct: #0d9488;
+    --ct-soft: #e6f6f4;
+    --p28: #4f46e5;
+    --mark: #fde68a;
+    --shadow: rgba(16, 24, 40, 0.05);
   }
+  :root { color-scheme: light dark; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
     font-family: "Pretendard Variable", "Pretendard", "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
@@ -89,21 +98,21 @@
   .chip.special { border-style: dashed; }
   .chip.special.on { background: linear-gradient(135deg, #0d9488, #2563eb); }
   .chip.special.p28.on { background: linear-gradient(135deg, #4f46e5, #7c3aed); }
-  .p28-box { border: 1px solid color-mix(in srgb, #4f46e5 30%, var(--line)); background: color-mix(in srgb, #4f46e5 6%, var(--card)); border-radius: 12px; padding: 12px 16px; margin: 0 0 14px; font-size: 13px; line-height: 1.65; }
-  .p28-box b.t { display: block; font-size: 14px; margin-bottom: 4px; color: #4f46e5; }
+  .p28-box { border: 1px solid color-mix(in srgb, var(--p28) 30%, var(--line)); background: color-mix(in srgb, var(--p28) 6%, var(--card)); border-radius: 12px; padding: 12px 16px; margin: 0 0 14px; font-size: 13px; line-height: 1.65; }
+  .p28-box b.t { display: block; font-size: 14px; margin-bottom: 4px; color: var(--p28); }
   .p28-box ul { margin: 4px 0 0 18px; padding: 0; }
-  .p28-box .p28-link { margin-top: 8px; padding-top: 8px; border-top: 1px dashed color-mix(in srgb, #4f46e5 30%, var(--line)); }
-  .p28-box .p28-link a { color: #4f46e5; font-weight: 700; text-decoration: none; }
+  .p28-box .p28-link { margin-top: 8px; padding-top: 8px; border-top: 1px dashed color-mix(in srgb, var(--p28) 30%, var(--line)); }
+  .p28-box .p28-link a { color: var(--p28); font-weight: 700; text-decoration: none; }
   .p28-box .p28-link a:hover { text-decoration: underline; }
   .p28-quick { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 16px; align-items: center; font-size: 12.5px; color: var(--muted); }
   .p28-quick button { border: 1px solid var(--line); background: var(--card); color: var(--text, inherit); border-radius: 999px; padding: 4px 11px; font-size: 12.5px; cursor: pointer; font-family: inherit; }
-  .p28-quick button.on { background: #4f46e5; color: #fff; border-color: #4f46e5; }
+  .p28-quick button.on { background: var(--plan); color: #fff; border-color: var(--plan); }
   table.ct.p28 { width: 1500px; }
   table.ct.p28 col.c-uni { width: 110px; } table.ct.p28 col.c-n { width: 230px; } table.ct.p28 col.c-new { width: 290px; }
   table.ct.p28 col.c-chg { width: 330px; } table.ct.p28 col.c-cal { width: 290px; } table.ct.p28 col.c-warn { width: 250px; }
   table.ct.p28 .pt { display: block; margin-bottom: 4px; }
-  table.ct.p28 mark { background: #fde68a; color: inherit; border-radius: 2px; padding: 0 1px; }
-  .flag.ct { background: #e6f6f4; color: #0d9488; }
+  table.ct.p28 mark { background: var(--mark); color: inherit; border-radius: 2px; padding: 0 1px; }
+  .flag.ct { background: var(--ct-soft); color: var(--ct); }
 
   /* 계약학과 모아보기 */
   .ct-intro { font-size: 13px; color: var(--muted); line-height: 1.6; margin: 0 0 14px; }
@@ -125,8 +134,8 @@
   table.ct td.dept { font-weight: 700; }
   table.ct .tr { display: block; }
   table.ct .muted { color: var(--muted); font-size: 12px; }
-  .m-ct { margin: 0 0 14px; border: 1px solid color-mix(in srgb, #0d9488 30%, var(--line)); border-radius: 11px; padding: 10px 14px; background: color-mix(in srgb, #0d9488 6%, var(--card)); }
-  .m-ct-title { font-size: 12.5px; font-weight: 800; color: #0d9488; margin-bottom: 6px; }
+  .m-ct { margin: 0 0 14px; border: 1px solid color-mix(in srgb, var(--ct) 30%, var(--line)); border-radius: 11px; padding: 10px 14px; background: color-mix(in srgb, var(--ct) 6%, var(--card)); }
+  .m-ct-title { font-size: 12.5px; font-weight: 800; color: var(--ct); margin-bottom: 6px; }
   .m-ct li { font-size: 13px; line-height: 1.6; margin: 0 0 4px 18px; }
   .ct-28 { font-size: 11.5px; font-weight: 500; line-height: 1.5; color: var(--muted, #64748b); margin-top: 3px; }
 
@@ -311,7 +320,64 @@
     :root {
       --bg: #14161b; --card: #1e2129; --text: #e8eaf0; --muted: #9aa1ad;
       --line: #2c303a; --accent-soft: #262c45; --susi-soft: #12312f; --jeongsi-soft: #3a2c14; --plan-soft: #26254a;
+      --accent: #6d86ff; --susi: #14b8b6; --jeongsi: #e08a1e; --plan: #6c63f0;
+      --ct: #2dd4bf; --ct-soft: #12312f; --p28: #a5a0ff; --mark: #6b5a12; --shadow: rgba(0, 0, 0, 0.3);
     }
+    .logo-img { border-color: #3a3f4b; }
+    .tile:hover { box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45); }
+    .modal { background: rgba(0, 0, 0, 0.7); }
+  }
+
+  /* ── 모바일(폭 640px 이하) ── */
+  @media (max-width: 640px) {
+    .wrap { padding: 14px 12px 40px; padding-left: max(12px, env(safe-area-inset-left)); padding-right: max(12px, env(safe-area-inset-right)); }
+    .controls { gap: 8px; margin-bottom: 8px; }
+    .controls input[type=search] { min-width: 0; width: 100%; padding: 11px 15px; font-size: 16px; }
+    /* 지역 칩: 한 줄 가로 스크롤 */
+    .chips { flex-wrap: nowrap; overflow-x: auto; width: calc(100% + 24px); margin: 0 -12px; padding: 2px 12px 6px; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+    .chips::-webkit-scrollbar { display: none; }
+    .chip { flex: 0 0 auto; padding: 6px 13px; font-size: 13px; }
+    .meta-row { margin-bottom: 8px; }
+    .count { font-size: 12px; margin-bottom: 0; }
+    .timeline { padding: 10px 13px; font-size: 12.5px; }
+    .timeline summary { font-size: 13px; }
+    .timeline .row { gap: 6px; }
+    .timeline .item { padding: 5px 10px; }
+    .timeline .note { font-size: 11.5px; }
+    /* 대학 타일: 3열 */
+    .tiles { grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); gap: 8px; }
+    .tile { padding: 12px 4px 10px; border-radius: 12px; }
+    .logo-wrap { width: 44px; height: 44px; margin-bottom: 7px; }
+    .logo-img, .logo-fb { border-radius: 11px; }
+    .logo-img { padding: 5px; }
+    .tile .t-uni { font-size: 12px; }
+    .tile .t-flags { gap: 3px; margin-top: 5px; }
+    .flag { padding: 1px 6px; font-size: 9.5px; }
+    .region-head { font-size: 14px; }
+    /* 상세 창: 화면 전체를 쓰는 시트 */
+    .modal { padding: 0; }
+    .modal-box { border-radius: 0; border: 0; min-height: 100vh; min-height: 100dvh; max-width: none; }
+    .m-head { border-radius: 0; padding: 12px 14px 10px; padding-top: max(12px, env(safe-area-inset-top)); }
+    .m-title { font-size: 18px; }
+    .m-body { padding: 12px 14px 0; }
+    .m-actions { gap: 6px; }
+    .m-actions a { font-size: 12.5px; padding: 8px 11px; }
+    .m-mode button { font-size: 13px; padding: 8px 6px; }
+    .m-tabs { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; padding-bottom: 2px; }
+    .m-tabs::-webkit-scrollbar { display: none; }
+    .m-tab { flex: 0 0 auto; padding: 7px 11px; }
+    .m-track { padding: 14px 14px 16px; }
+    .m-track-name { font-size: 16px; }
+    .m-recruit { margin-left: 0; width: 100%; }
+    .m-sec li { font-size: 13px; }
+    .m-sched { grid-template-columns: 1fr 1fr; }
+    .ct-head { font-size: 14px; flex-wrap: wrap; }
+    table.ct { font-size: 12.5px; }
+    footer { font-size: 11.5px; }
+  }
+  /* 터치 기기에서는 떠오르는 효과를 끔 */
+  @media (hover: none) {
+    .tile:hover { transform: none; box-shadow: 0 1px 2px var(--shadow); border-color: var(--line); }
   }
 </style>
 </head>
@@ -371,6 +437,8 @@ const academicYear = now.getMonth() + 1 >= 3 ? now.getFullYear() + 1 : now.getFu
 document.getElementById("yearBadge").textContent = academicYear + "학년도";
 
 // 입시 일정: 오늘 날짜로 지난 단계(done)·지금 단계(now)·다음 단계(next) 표시
+// 휴대폰(폭 640px 이하)에서는 일정을 접어 두고 '지금' 단계만 제목에 보여 줌
+if (window.matchMedia && window.matchMedia("(max-width: 640px)").matches) document.querySelector("details.timeline").removeAttribute("open");
 (function markTimeline() {
   const today = new Date(); today.setHours(0, 0, 0, 0);
   const items = [...document.querySelectorAll("#tlRow .item")];
